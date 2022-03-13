@@ -31,3 +31,8 @@
   $ rails db:seed
   ```
 
+* App initialization
+
+  ```
+  $ rails s
+  ```
