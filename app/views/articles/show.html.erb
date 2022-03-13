@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h4><%= @article.title %></h4>
+<p>
+  <%= @article.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @article.user.name %>
+</p>
+
+
+<h4>Comments</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th>User</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @article.comments.each do |comment| %>
+      <tr>
+        <td><%= comment.message %></td>
+        <td><%= comment.user.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_article_path(@article), class: "btn btn-primary" %> |
+<%= link_to 'Back', articles_path, class: "btn btn-light" %>
